@@ -24,6 +24,32 @@ total += cart[i].price * cart[i].quantity;
 
 }
 
-console.log(total)
-
 // The Total is 12500 
+
+const products = [
+    {
+        name: "iPhone 17",
+        price: 249999
+    },
+    {
+        name: "MacBook Air",
+        price: 299999
+    },
+    {
+        name: "AirPods Pro",
+        price: 69999
+    }
+];
+
+const productContianer = document.querySelector(".moible-specs");
+
+products.forEach(
+    (item)=>{
+        productContianer.innerHTML += `
+        <h3>${item.name}</h3>
+        <p>${item.price}</p>
+        `
+    }
+)
+
+// Displayed Products on the Front-End
