@@ -25,3 +25,5 @@ total += cart[i].price * cart[i].quantity;
 }
 
 console.log(total)
+
+// The Total is 12500 
