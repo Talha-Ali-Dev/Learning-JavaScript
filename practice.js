@@ -62,3 +62,31 @@ function taxCalculate (price, quantity, tax){
 }
 
 let totalPrice = taxCalculate(4000, 4, 25 / 100);
+
+// Created a function to calculate total price 
+
+const NewCart = [
+    {
+        name: "Keyboard",
+        price: 3000,
+        quantity: 2
+    },
+    {
+        name: "Mouse",
+        price: 1500,
+        quantity: 1
+    }
+];
+
+function calcObjectPrice (cart){
+
+    let total = 0;
+
+    for(let i = 0; i < cart.length; i++){
+        total += cart[i].price * cart[i].quantity;
+    }
+
+    return total;
+}
+
+// Created a function that will calculate total cart price of data which is in form of array
