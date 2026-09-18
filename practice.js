@@ -53,3 +53,12 @@ products.forEach(
 )
 
 // Displayed Products on the Front-End
+
+function taxCalculate (price, quantity, tax){
+    const subTotal = price * quantity;
+    const taxAmount = subTotal * tax;
+    const total = subTotal + taxAmount;
+    return total;
+}
+
+let totalPrice = taxCalculate(4000, 4, 25 / 100);
