@@ -110,3 +110,39 @@ function loginVerifier (email, password){
 loginVerifier("talha@example.com", "123456")
 
 // Created a basic login Verifier
+
+class bankAccount {
+    constructor(person, balance){
+        this.person = person;
+        this.balance = balance;
+    } 
+
+    deposit(amount){
+        this.balance += amount;
+        return this.balance
+    }
+
+    withdraw(amount){
+
+        if(amount > this.balance){
+            console.log("Idiot")
+            return this.balance
+        }
+
+      return  this.balance -= amount;
+    }
+
+    totalBalance (){
+        return this.balance;
+    }
+}
+
+const customer = new bankAccount("Nikka", 70000);
+
+console.log(customer)
+console.log(customer.deposit(20000))
+console.log(customer.withdraw(1000))
+console.log(customer.totalBalance())
+
+// Exercise for leaning Class Constructor 
+
