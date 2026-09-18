@@ -90,3 +90,23 @@ function calcObjectPrice (cart){
 }
 
 // Created a function that will calculate total cart price of data which is in form of array
+
+const user = {
+    email: "talha@example.com",
+    password: "123456"
+};
+
+function loginVerifier (email, password){
+
+    if(email === user.email && password === user.password){
+        console.log("You are Welcome Login Successfull")
+    }
+    else{
+        console.log("Invalid Details")
+    }
+
+}
+
+loginVerifier("talha@example.com", "123456")
+
+// Created a basic login Verifier
