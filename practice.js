@@ -237,9 +237,34 @@ class Room {
     }
 }
 
-const room = new Room(101, "Deluxe", 5000);
-room.book();
-room.cancelBooking();
+// const room = new Room(101, "Deluxe", 5000);
+// room.book();
+// room.cancelBooking();
 
 
 // Try to Understand but could not build logic Problem 1
+
+const userInfo = document.querySelector(".user-info");
+
+function getUsers (){
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then((response)=>{
+        return response.json()
+    })
+    .then((users)=>{
+        users.forEach((user)=>{
+            userInfo.innerHTML += `
+            <h2>${user.name}</h2>
+            <p>${user.username}</p>
+            <p>${user.email}</P>
+            `
+        })
+    })
+    .catch((error)=>{
+        console.log(`Koi panga ${error}`)
+    })
+}
+
+getUsers();
+
+// Fetch users form API 
