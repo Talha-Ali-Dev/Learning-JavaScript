@@ -146,3 +146,100 @@ console.log(customer.totalBalance())
 
 // Exercise for leaning Class Constructor 
 
+let rooms = [
+    {
+        roomNumber: 101,
+        type: "Standard",
+        price: 3000,
+        available: true
+    },
+    {
+        roomNumber: 102,
+        type: "Standard",
+        price: 3000,
+        available: true
+    },
+    {
+        roomNumber: 103,
+        type: "Deluxe",
+        price: 5000,
+        available: true
+    },
+    {
+        roomNumber: 104,
+        type: "Deluxe",
+        price: 5000,
+        available: false
+    },
+    {
+        roomNumber: 105,
+        type: "Suite",
+        price: 8000,
+        available: true
+    },
+    {
+        roomNumber: 106,
+        type: "Suite",
+        price: 8000,
+        available: true
+    },
+    {
+        roomNumber: 107,
+        type: "Standard",
+        price: 3000,
+        available: false
+    },
+    {
+        roomNumber: 108,
+        type: "Deluxe",
+        price: 5000,
+        available: true
+    },
+    {
+        roomNumber: 109,
+        type: "Suite",
+        price: 8000,
+        available: false
+    },
+    {
+        roomNumber: 110,
+        type: "Standard",
+        price: 3000,
+        available: true
+    }
+];
+
+class Room {
+    constructor(roomNumber, type, price){
+        this.roomNumber = roomNumber;
+        this.type = type;
+        this.price = price;
+        this.available = true
+    }
+
+    book(){
+
+        if(!this.available){
+            console.log("It is booked");
+            return;
+        }
+
+        this.available = false;
+        console.log(`The room no ${this.roomNumber} booked`)
+
+    }
+
+    cancelBooking (){
+
+        this.available = true;
+        console.log(`The room no ${this.roomNumber} is available again`)
+
+    }
+}
+
+const room = new Room(101, "Deluxe", 5000);
+room.book();
+room.cancelBooking();
+
+
+// Try to Understand but could not build logic Problem 1
