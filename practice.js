@@ -265,10 +265,54 @@ function searchUsers(searchText) {
         return user.name.toLowerCase().includes(searchText.toLowerCase());
       });
 
-      console.log(filteredUsers)
+      console.log(filteredUsers);
     });
 }
 
-console.log(searchUsers("Leanne"))
+console.log(searchUsers("Leanne"));
 
 // Search Filter 70% understanding
+
+class productManager {
+  constructor() {
+    this.products = [];
+  }
+
+  loadProducts() {
+    fetch("https://dummyjson.com/products")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.products = data.products;
+
+        this.displayProducts();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  displayProducts() {
+    const newUsers = document.querySelector(".new-users");
+
+    this.products.forEach((product) => {
+      newUsers.innerHTML += `
+            <h2>Title: ${product.title}</h2>
+            <p>Description: ${product.description}</p>
+            <p>Category: ${product.category}</p>  
+            <p>Price: ${product.price}</p>  
+            <p>Rating: ${product.rating}</p>  
+            <p>Stock: ${product.stock}</p>  
+            <p>Return Policy: ${product.returnPolicy}</p>  
+            
+            
+            `;
+    });
+  }
+}
+
+const danManager = new productManager();
+
+danManager.loadProducts();
+
