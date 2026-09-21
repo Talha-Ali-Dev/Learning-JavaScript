@@ -316,3 +316,26 @@ const danManager = new productManager();
 
 danManager.loadProducts();
 
+// Learned Class Constructor and Fetch Api
+
+function getWeather() {
+  fetch(
+    "https://api.open-meteo.com/v1/forecast?latitude=34.0151&longitude=71.5249&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code",
+  )
+  .then((response)=>{
+    return response.json()
+  })
+  .then((weather)=>{
+
+    
+    console.log(Math.round(weather.current.temperature_2m))
+
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
+}
+
+getWeather();
+
+// Fetch weather from weather Api
