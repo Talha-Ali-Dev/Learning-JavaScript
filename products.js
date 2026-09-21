@@ -46,22 +46,23 @@ function productFinder(searchText) {
       return response.json();
     })
     .then((data) => {
-      data.products.filter((product) => {
-        if (product.title === searchText) {
-          searchProduct.innerHTML = `
-          <div class="bg-red-100 rounded-sm p-3">
+      const productsFilter = data.products.filter((product) => {
+        return product.title.includes(searchText);
+      });
+
+      productsFilter.forEach((product) => {
+        searchProduct.innerHTML += `
+          <div class="bg-amber-700 rounded-sm p-3">
             <h2>Title: ${product.title}</h2>
             <p>Description: ${product.description}</p>
             <p>Price: ${product.price}</p>
             <p>Rating: ${product.rating}</p>
-          </div>`;
-        }
+          </div>
+        `;
       });
     });
 }
 
-productFinder("Essence Mascara Lash Princess");
+productFinder("t");
 
 // Create search function
-
-

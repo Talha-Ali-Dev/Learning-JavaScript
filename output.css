@@ -10,6 +10,7 @@
       "Courier New", monospace;
     --color-red-100: oklch(93.6% 0.032 17.717);
     --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
     --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-purple-300: oklch(82.7% 0.119 306.383);
     --color-gray-800: oklch(27.8% 0.033 256.848);
@@ -234,6 +235,9 @@
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .bg-amber-700 {
+    background-color: var(--color-amber-700);
   }
   .bg-black {
     background-color: var(--color-black);
